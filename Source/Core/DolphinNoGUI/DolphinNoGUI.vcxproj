@@ -20,6 +20,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
     </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ProjectReference Include="$(CoreDir)DolphinLib.vcxproj">
@@ -35,6 +38,7 @@
   <Import Project="$(ExternalsDir)cpp-optparse\exports.props" />
   <Import Project="$(ExternalsDir)fmt\exports.props" />
   <ItemGroup>
+    <ClCompile Include="..\DolphinQt\Vanguard\VanguardClient.cpp" />
     <ClCompile Include="MainNoGUI.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="PlatformHeadless.cpp" />

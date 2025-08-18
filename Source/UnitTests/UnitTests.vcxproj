@@ -23,6 +23,8 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /i /e /s /y /f "$(ProjectDir)\..\..\Data\Sys\" "$(TargetDir)Sys"</Command>
@@ -39,6 +41,7 @@
   <ItemGroup>
     <!--gtest is rather small, so just include it into the build here-->
     <ClCompile Include="$(ExternalsDir)gtest\googletest\src\gtest-all.cc" />
+    <ClCompile Include="..\Core\DolphinQt\Vanguard\VanguardClient.cpp" />
     <!--Lump all of the tests (and supporting code) into one binary-->
     <ClCompile Include="UnitTestsMain.cpp" />
     <ClCompile Include="Common\BitFieldTest.cpp" />
@@ -98,6 +101,7 @@
   <ItemGroup>
     <ProjectReference Include="$(CoreDir)DolphinLib.vcxproj">
       <Project>{D79392F7-06D6-4B4B-A39F-4D587C215D3A}</Project>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
     </ProjectReference>
     <ProjectReference Include="$(DolphinRootDir)Languages\Languages.vcxproj">
       <Project>{0e033be3-2e08-428e-9ae9-bc673efa12b5}</Project>

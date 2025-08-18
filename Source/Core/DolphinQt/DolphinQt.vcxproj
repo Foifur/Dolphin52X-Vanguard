@@ -240,6 +240,7 @@ xcopy /y $(ProjectDir)Vanguard\VanguardBlacklistedDomains.json $(BinaryOutputDir
     <ClCompile Include="Updater.cpp" />
     <ClCompile Include="Vanguard\VanguardHelpers.cpp" />
     <ClCompile Include="Vanguard\VanguardJsonParser.cpp" />
+    <ClCompile Include="Vanguard\VanguardClient.cpp" />
     <ClCompile Include="WiiUpdate.cpp" />
   </ItemGroup>
   <!--

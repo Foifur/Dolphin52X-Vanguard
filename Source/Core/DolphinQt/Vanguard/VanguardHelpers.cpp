@@ -86,7 +86,6 @@ void Vanguard_loadsavestate(BSTR filename)
   State::LoadAs(Core::System::GetInstance(), filename_converted);
 }
 
-bool VanguardClient::loading = false;
 void Vanguard_loadROM(BSTR filename)
 {
   VanguardClient::loading = true;
@@ -128,7 +127,6 @@ void Vanguard_forceStop()
   VanguardClientInitializer::win->MainWindow::ForceStopVanguard();
 }
 
-std::string VanguardClient::system_core = "EMPTY";
 char* Vanguard_getSystemCore()
 {
   // store the output as a string, then convert it to char*
