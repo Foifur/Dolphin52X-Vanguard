@@ -57,7 +57,12 @@ T CallImportedFunction(char* function_name, std::string string = "")
   {
     // change the string into a char array and convert it to a BSTR
     const char* char_array = string.c_str();
-    converted_string = _com_util::ConvertStringToBSTR(char_array);
+    int wch_len = MultiByteToWideChar(CP_UTF8, 0, char_array, -1, nullptr, 0);
+    if (wch_len != 0)
+    {
+      converted_string = SysAllocStringLen(nullptr, wch_len);
+      MultiByteToWideChar(CP_UTF8, 0, char_array, -1, converted_string, wch_len);
+    }
   }
 
   // check to see if we converted a string and need to pass an input argument
