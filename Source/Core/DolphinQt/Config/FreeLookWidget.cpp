@@ -43,8 +43,12 @@ void FreeLookWidget::CreateLayout()
   m_enable_freelook->setEnabled(!hardcore);
 #endif  // USE_RETRO_ACHIEVEMENTS
   m_freelook_controller_configure_button = new NonDefaultQPushButton(tr("Configure Controller"));
-
+  // RTC_Hijack: Remove other free look options from drop down
+  /*
   m_freelook_control_type = new ConfigChoice({tr("Six Axis"), tr("First Person"), tr("Orbital")},
+                                             Config::FL1_CONTROL_TYPE);
+  */
+  m_freelook_control_type = new ConfigChoice({tr("Six Axis")},
                                              Config::FL1_CONTROL_TYPE);
   m_freelook_control_type->SetTitle(tr("Free Look Control Type"));
   m_freelook_control_type->SetDescription(tr(
@@ -52,10 +56,10 @@ void FreeLookWidget::CreateLayout()
       "Six Axis: Offers full camera control on all axes, akin to moving a spacecraft in zero "
       "gravity. This is the most powerful Free Look option but is the most challenging to use.<br> "
       "<br>"
-      "First Person: Controls the free camera similarly to a first person video game. The camera "
+      /*"First Person: Controls the free camera similarly to a first person video game. The camera "
       "can rotate and travel, but roll is impossible. Easy to use, but limiting.<br><br>"
       "Orbital: Rotates the free camera around the original camera. Has no lateral movement, only "
-      "rotation and you may zoom up to the camera's origin point."));
+      "rotation and you may zoom up to the camera's origin point."*/));
 
   auto* description =
       new QLabel(tr("Free Look allows for manipulation of the in-game camera. "
