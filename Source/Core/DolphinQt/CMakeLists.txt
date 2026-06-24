@@ -384,6 +384,13 @@ add_executable(dolphin-emu
   Translation.h
   Updater.cpp
   Updater.h
+  Vanguard/VanguardClient.cpp
+  Vanguard/VanguardClientInitializer.h
+  Vanguard/VanguardEmuSettings.h
+  Vanguard/VanguardHelpers.cpp
+  Vanguard/VanguardHelpers.h
+  Vanguard/VanguardJsonParser.cpp
+  Vanguard/VanguardJsonParser.h
   WiiUpdate.cpp
   WiiUpdate.h
 )

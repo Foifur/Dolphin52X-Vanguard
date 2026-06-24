@@ -1,5 +1,6 @@
 #pragma once
 #include <comdef.h>
+#include <string>
 
 #define EXPORT extern "C" __declspec(dllexport)
 
