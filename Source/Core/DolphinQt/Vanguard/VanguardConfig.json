@@ -12,7 +12,8 @@
     "SUPPORTS_SAVESTATES": true,
     "SUPPORTS_REFERENCES": true,
     "SUPPORTS_MIXED_STOCKPILE": true,
-    "CORE_DISKBASED": false
+    "CORE_DISKBASED": false,
+    "RELOAD_ON_SYNC_SETTINGS": false
   },
   "MemoryDomainConfig": [
     {
@@ -21,6 +22,7 @@
         "Wii",
         "Gamecube"
       ],
+      "RequiresReload":  false,
       "BigEndian": true,
       "Size": "0x01800000",
       "WordSize": 4,
@@ -32,6 +34,7 @@
       "Profiles": [
         "Wii"
       ],
+      "RequiresReload": false,
       "BigEndian": true,
       "Size": "0x04000000",
       "WordSize": 4,
@@ -43,6 +46,7 @@
       "Profiles": [
         "Gamecube"
       ],
+      "RequiresReload": false,
       "BigEndian": true,
       "Size": "0x04000000",
       "WordSize": 4,
